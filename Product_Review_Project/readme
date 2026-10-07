@@ -1,1 +1,135 @@
+# Product Review Intelligence System using Aspect-Based Sentiment Analysis
+
+## Overview
+
+This project analyzes Flipkart product reviews using **Aspect-Based Sentiment Analysis (ABSA)**.
+
+Instead of only classifying an entire review as positive, neutral, or negative, the system identifies specific product aspects and analyzes the sentiment associated with them.
+
+### Example
+
+> "The camera quality is excellent but the battery backup is very poor."
+
+The system identifies:
+
+| Aspect | Sentiment |
+|---|---|
+| Camera | Positive |
+| Quality | Positive |
+| Battery | Negative |
+
+## Project Pipeline
+
+```text
+Flipkart Reviews
+       ↓
+Data Loading
+       ↓
+Data Cleaning & Preprocessing
+       ↓
+Review-level Sentiment from Ratings
+       ↓
+Aspect Extraction
+       ↓
+Aspect Normalization
+       ↓
+Aspect-level Sentiment Analysis
+       ↓
+Confidence Scoring
+       ↓
+Product-wise Intelligence
+       ↓
+Visualization & Review Analyzer
+```
+
+## Dataset
+
+The project uses a Flipkart product review dataset containing product information, prices, ratings, reviews and summaries.
+
+The notebook processes **189,869 valid reviews** across **811 products**.
+
+## Key Results
+
+- Average rating: **4.11 / 5**
+- Positive reviews: **78.13%**
+- Neutral reviews: **8.26%**
+- Negative reviews: **13.61%**
+- Reviews containing known aspects: **65,352 (34.42%)**
+- Unique aspect categories: **25**
+- Total aspect mentions: **92,847**
+
+Frequently discussed aspects include:
+
+- Quality
+- Price
+- Design
+- Delivery
+- Performance
+- Sound
+- Size
+- Service
+- Material
+- Battery
+- Camera
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- spaCy
+- Regular Expressions
+- Jupyter Notebook / Kaggle
+
+## Main Features
+
+1. Review preprocessing and cleaning
+2. Rating-based review sentiment classification
+3. Product aspect extraction
+4. Aspect normalization using a curated vocabulary
+5. Rule-based aspect sentiment analysis
+6. Confidence scoring
+7. Review-level fallback when direct aspect evidence is unavailable
+8. Aspect frequency analysis
+9. Product-wise review intelligence
+10. Interactive review analyzer
+11. Visual analytics and dashboards
+
+## Important Methodological Notes
+
+- Review-level sentiment labels are derived from star ratings:
+  - 1–2 → Negative
+  - 3 → Neutral
+  - 4–5 → Positive
+- The ABSA component is a **rule-based baseline**, not a transformer-based state-of-the-art model.
+- The confidence score is a heuristic score and is **not a calibrated probability**.
+- Aspect sentiment analysis was demonstrated on a 5,000-review sample because running the spaCy-based ABSA analysis over the entire dataset was computationally expensive.
+- Full-dataset aspect frequency analysis was performed over all 189,869 valid reviews.
+- The dataset is strongly biased toward positive reviews.
+
+## Future Scope
+
+- Use BERT/transformer models for advanced ABSA.
+- Create manually annotated aspect-level training data.
+- Automatically discover new aspects using embeddings or topic modeling.
+- Improve handling of negation, sarcasm and contextual sentiment.
+- Build an interactive Streamlit dashboard.
+- Add product comparison and recommendation features.
+- Support real-time review analysis.
+
+## Repository Structure
+
+```text
+Product_Review_Project/
+│
+├── Product_Review_Intelligence.ipynb
+└── README.md
+```
+
+## Author
+
+**Kirti Sharma**  
+B.Tech CSE (Artificial Intelligence & Machine Learning)
 
